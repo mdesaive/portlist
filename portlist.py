@@ -7,10 +7,10 @@ documentation server list.
 
 netstat should be called as:
     Data collection with:
-    ( LANG=C netstat --version; LANG=C netstat --inet -anp )| ssh melly@m01n039.m01de.medneo.de tee /extern/dms/medneo/61_IT-infrastructure/projects/15-09-01-Documentation/82-Netstat-Lists/netstat.$(uname -n).txt
+    ( LANG=C netstat --version; LANG=C netstat --inet -anp )| ssh <user>@<external host for scripting> tee <path on host>/netstat.$(uname -n).txt
 
     Process data with
-    cat netstat.m01radius02.txt | python3 portlist-0-2.py | sort -k3 -k2n -k1 | uniq
+    cat netstat.mel01wiki01.txt | python3 portlist.py | sort -k3 -k2n -k1 | uniq
 
 If a filename is provided, the file should contain the netstat output.
 If no filename is provided, portlist.py reads from stdin.
